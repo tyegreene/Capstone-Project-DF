@@ -12,40 +12,6 @@ The purpose of this application is not to serve as a betting platform, but rathe
 
 By centralizing data in a user-friendly format, the app aims to streamline the process of understanding horse racing markets, making it more approachable for users of all experience levels.
 
-Evidence of Planning:
-
-User Stories:
-User stories have been documented in USER_STORIES.md, covering 10 key user scenarios from novice enthusiasts to experienced bettors. Each user story follows the standard format: "As a [user type], I want to [action], so that [benefit]" and includes acceptance criteria. The stories directly map to implemented features including race viewing, favorite identification, bet calculations, and data access.
-
-Project Structure:
-```
-Capstone Project DF/
-├── app.py                    # Main Streamlit application
-├── test_app.py               # Pytest test suite for data processing functions
-├── bet_fair_test.ipynb       # Jupyter notebook for API testing and development
-├── requirements.txt           # Python dependencies
-├── README.md                  # Project documentation
-├── USER_STORIES.md            # User stories and acceptance criteria
-├── credentials.json           # Betfair API credentials (not in repo)
-└── certs/                    # SSL certificates for Betfair API authentication
-    ├── client-2048.crt
-    └── client-2048.key
-```
-
-Application Architecture:
-- Frontend: Streamlit web interface with sidebar navigation and multiple pages
-- Data Layer: Betfair API integration via betfairlightweight library
-- Processing Layer: Helper functions for data transformation, cleaning, and calculations
-- Testing Layer: Pytest suite with mocked dependencies for isolated unit testing
-- Caching: Streamlit caching decorators for API response optimization
-
-Key Components:
-- Betfair Client Initialization: Handles authentication and session management
-- Market Fetching Functions: Retrieve race data, market details, and odds
-- Data Transformation Helpers: Process and format data for display
-- UI Pages: Home, Upcoming Races, Finished Races, Bet Simulator
-- Test Suite: 7 essential tests covering data processing logic
-
 Choice of Data:
 The app uses Betfair's delayed API to access UK and Ireland horse racing markets, including race times, runners, jockeys, trainers, odds, and non-runner status. Live data costs £299, so the delayed feed provides a cost-effective alternative for analytics and simulations.
 
